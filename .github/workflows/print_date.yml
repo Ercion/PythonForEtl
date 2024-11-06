@@ -1,0 +1,27 @@
+name: print_date
+on: [push]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: print_date_on_ubuntu
+    - run: date
+
+  job2:
+    runs-on: windows-latest
+    steps:
+    - name: print_date_on_windows
+    - run: date
+
+  job3:
+    runs-on: macos-latest
+    steps:
+    - name: print_date_on_macos
+    - run: date
+ 
+  job4:
+    needs: [job1,job2,job3]
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
