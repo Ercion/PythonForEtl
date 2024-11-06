@@ -6,7 +6,8 @@ jobs:
     name: first-job
     runs-on: ubuntu-latest
     steps:
-    - run: date
+    - name: first-job-step
+      run: date
 
   job2:
     name: second-job
